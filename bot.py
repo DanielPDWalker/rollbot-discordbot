@@ -24,7 +24,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('!roll'):
+    if message.content.lower().startswith('!roll'):
 
         holder = re.findall(r'\d+', message.content)
 
@@ -32,6 +32,7 @@ async def on_message(message):
             number = int(holder[0])
         except ValueError:
             await message.channel.send("Please use a numberino frienderino.")
+            break
 
         await message.channel.send(f'You have rolled a {r.randint(0,number)} on a d{number}')
 

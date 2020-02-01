@@ -1,14 +1,12 @@
 # bot.py
-import os
-
 import discord
-from dotenv import load_dotenv
 import local_settings
 
-load_dotenv()
-token = local_settings.token
+token = local_settings.DISCORD_TOKEN
+guild = local_settings.DISCORD_GUILD
 
 client = discord.Client()
+
 
 @client.event
 async def on_ready():

@@ -13,7 +13,7 @@ The above will roll a random number on a d20. (Works with any number rather than
 This will roll two 8 sided dice and add 3 to the result. This will only show you the total value at the end of the roll and modifier. (The modifier can be negative as well)  
 
 - !rollout 5d20  
-Will roll five 20 sided dice, and post a message containing what each dice rolled as well as a final message with the total.
+Will roll five 20 sided dice, and post a message containing what each dice rolled as well as a final message with the total. (!rollout doesnt support the above modifiers at the moment).
 
 
 ## Requirements

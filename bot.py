@@ -19,7 +19,7 @@ def roll(i, l):
 
 
 def basic_roll(l):
-    return r.randint(1, l[0])
+    return int(r.randint(1, l[0]))
 
 
 if __name__ == '__main__':
@@ -60,7 +60,7 @@ if __name__ == '__main__':
                 await message.channel.send(f'You have rolled a {roll_list[-1]} on {holder[0]} x d{holder[1]}s')
             else:
                 num = basic_roll(holder)
-                await message.channel.send(f'You have rolled a {r} on a d{holder[0]}')
+                await message.channel.send(f'You have rolled a {num} on a d{holder[0]}')
 
         if message.content.lower().startswith('!rollout'):
             try:

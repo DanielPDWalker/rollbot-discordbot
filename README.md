@@ -14,4 +14,4 @@ Will roll five 20 sided dice, and post a message containing what each dice rolle
 
 
 ## Requirements
-'''pip install discord'''
+'pip install discord'

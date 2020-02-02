@@ -18,6 +18,10 @@ def roll(i, l):
     return rolls
 
 
+def basic_roll(l):
+    return r.randint(1, l[0])
+
+
 if __name__ == '__main__':
 
     TOKEN = local_settings.DISCORD_TOKEN
@@ -55,7 +59,8 @@ if __name__ == '__main__':
                 roll_list = roll(0, holder)
                 await message.channel.send(f'You have rolled a {roll_list[-1]} on {holder[0]} x d{holder[1]}s')
             else:
-                await message.channel.send(f'You have rolled a {r.randint(0,holder[0])} on a d{holder[0]}')
+                num = basic_roll(holder)
+                await message.channel.send(f'You have rolled a {r} on a d{holder[0]}')
 
         if message.content.lower().startswith('!rollout'):
             try:
@@ -69,6 +74,6 @@ if __name__ == '__main__':
             await message.channel.send(f'You have rolled a total of {roll_list[-1]} on {holder[0]} x d{holder[1]}s')
 
         if message.content.lower().startswith('!help'):
-            await message.channel.send(f"Examples: !roll 20, !roll 2d20, !roll 2d20+5, !roll 2d20-5, !rollout 5d20")
+            await message.channel.send(f"Examples: !roll 20, !roll 2d12, !roll 3d8+5, !roll 2d6-5, !rollout 5d20")
 
     client.run(TOKEN)
